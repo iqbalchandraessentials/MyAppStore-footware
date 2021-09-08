@@ -15,7 +15,7 @@ Widget header() {
             )),
         SizedBox(
           height: 2,
-        ),
+        ), 
         Text('Register and Happy Shoping',
             style:
                 subtitleTextStyle.copyWith(fontSize: 13, fontWeight: regular))
@@ -281,23 +281,23 @@ class SignUp extends StatelessWidget {
         backgroundColor: backgroundColor1,
         resizeToAvoidBottomInset: false,
         body: SafeArea(
-        child: Container(
-          margin: EdgeInsets.symmetric(
-            horizontal: defaultMargin,
-          ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  header(),
-                  nameInput(),
-                  usernameInput(),
-                  emailInput(),
-                  passwordInput(),
-                  signUpButton(context: context),
-                  Spacer(),
-                  footer(context: context)
-                ],
-              )),
+          child: Container(
+            margin: EdgeInsets.symmetric(
+              horizontal: defaultMargin,
+            ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    header(),
+                    nameInput(),
+                    usernameInput(),
+                    emailInput(),
+                    passwordInput(),
+                    signUpButton(context: context),
+                    Spacer(),
+                    footer(context: context)
+                  ],
+                )),
         ));
   }
 }
