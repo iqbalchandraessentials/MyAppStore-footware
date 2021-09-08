@@ -1,16 +1,10 @@
-# flutter_application_1
+![enter image description here](https://scontent.fcgk23-1.fna.fbcdn.net/v/t1.6435-9/241562275_148311177473899_5559015518165350430_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=730e14&_nc_eui2=AeH6C3UKFvGveOq_Wr2bro72_GbWJVP1ysr8ZtYlU_XKysdw1TWbcSDCbWWf_mpl6e0kcOO0g01b1ecf-cxh4BXx&_nc_ohc=3sbaAdYmsykAX-z4kj8&_nc_ht=scontent.fcgk23-1.fna&oh=839f6b5ac4aeb96c75fd21d1277157dc&oe=615DA504)
+membangun aplikasi e-commerce dengan Framework PHP Laravel dan SDK Flutter. Laravel membuat pengembangan e-commerce yang kompleks jadi lebih mudah dan cepat. Selain itu, Flutter yang didukung dengan fitur cross platform dapat memudahkan Developer mengintegrasikan e-commerce di beberapa platform seperti iOS dan Android.
 
-A new Flutter project.
+API yang kita buat menggunakan Framework Laravel dan berguna mempermudah user dalam berbelanja di e-commerce. Melalui study case aplikasi Toko Sepatu Online, kita akan mempelajari fitur penting seperti pengaturan aplikasi, feedback dari user, hingga transaksi. Developer harus bisa membangun semua fitur dengan baik agar user puas sehingga tumbuh loyalitas terhadap brand dan tentunya meningkatkan profit penjualan.
+![enter image description here](https://scontent.fcgk23-1.fna.fbcdn.net/v/t1.6435-9/241415272_148311027473914_3267237841551428830_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=730e14&_nc_eui2=AeGKoAXtUPAzdv_1Sy7zFs1Az5iSZFRE6kjPmJJkVETqSDhhigbWDTDwv3gU7zx3Z3Iq_FSSYXS1GTx34NrtDS7U&_nc_ohc=yvIBunJhDEIAX8AmBUN&tn=OX_tGkgaw0ibad9-&_nc_ht=scontent.fcgk23-1.fna&oh=11325afff3ed1ea63e699db1b6feb6bd&oe=615B84CF)
 
-## Getting Started
+![enter image description here](https://scontent.fcgk23-1.fna.fbcdn.net/v/t1.6435-9/241400575_148311134140570_6010540443785796861_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=730e14&_nc_eui2=AeHyTLJQL6kHuAhQxSDcKmqVG7dTbqJgdNYbt1NuomB01kft8LbtpsSaGv1CSPl_xdfFNBb9QrvdAWu6t68rI5LT&_nc_ohc=61gKF1ySG78AX94vJX3&tn=OX_tGkgaw0ibad9-&_nc_ht=scontent.fcgk23-1.fna&oh=32ea1a6a89285acd7fc091b364b48feb&oe=615ADFFE)
 
-This project is a starting point for a Flutter application.
+![enter image description here](https://scontent.fcgk23-1.fna.fbcdn.net/v/t1.6435-9/241510043_148311080807242_4962994397802898770_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=730e14&_nc_eui2=AeFV1WWX5zrh2SUA-tRmcN01rS3j4IrtcPytLePgiu1w_OrtUPSaz52sYTspewluLWDpL0OkQCkIFHY_TstRkJlV&_nc_ohc=hl-y16OLYf0AX8WmWPF&tn=OX_tGkgaw0ibad9-&_nc_ht=scontent.fcgk23-1.fna&oh=4374ffbba7e111d23d9c0b7ac441a68c&oe=615AD1E1)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
