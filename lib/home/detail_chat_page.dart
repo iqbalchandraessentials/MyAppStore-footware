@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/home/widgets/chat_buble.dart';
 import 'package:flutter_application_1/theme.dart';
 
 class DetailChatPage extends StatelessWidget {
@@ -35,7 +36,6 @@ class DetailChatPage extends StatelessWidget {
                       fontWeight: light,
                     ),
                   ),
-                  
                 ],
               )
             ],
@@ -60,30 +60,40 @@ class DetailChatPage extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-           ClipRRect(
-             borderRadius: BorderRadius.circular(12),
-             child: Image.asset('assets/image_shoes.png',
-             width: 54,
-             ),
-           ),
-           SizedBox(width: 10,),
-           Expanded(
-             child: Column(
-               crossAxisAlignment: CrossAxisAlignment.start,
-               mainAxisAlignment: MainAxisAlignment.start,
-               children: [
-                 Text('COURT VISIO...',
-                 style: primaryTextStyle,
-                 overflow: TextOverflow.ellipsis,
-                 ),
-                 SizedBox(height: 2,),
-                 Text('Rp. 800.000', style: priceTextStyle.copyWith(
-                   fontWeight: medium
-                 ),),
-               ],
-             ),
-           ),
-             Image.asset('assets/button_close.png', width: 22, ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(12),
+              child: Image.asset(
+                'assets/image_shoes.png',
+                width: 54,
+              ),
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    'COURT VISIO...',
+                    style: primaryTextStyle,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  SizedBox(
+                    height: 2,
+                  ),
+                  Text(
+                    'Rp. 800.000',
+                    style: priceTextStyle.copyWith(fontWeight: medium),
+                  ),
+                ],
+              ),
+            ),
+            Image.asset(
+              'assets/button_close.png',
+              width: 22,
+            ),
           ],
         ),
       );
@@ -96,7 +106,9 @@ class DetailChatPage extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            productPreview(),
+
+            // productPreview(),
+
             Row(
               children: [
                 Expanded(
@@ -131,9 +143,29 @@ class DetailChatPage extends StatelessWidget {
       );
     }
 
+    Widget content() {
+      return ListView(
+        padding: EdgeInsets.symmetric(
+          horizontal: defaultMargin
+        ),
+        children: [
+          Buble(
+            isSender: true,
+            text: 'Wilujeng Enjing',
+            hasProduct: true,
+          ),
+          Buble(
+            isSender: false,
+            text: 'Wilujeng Enjing kang, kumha kang keluarga Damang ?',
+          ),
+        ],
+      );
+    }
+
     return Scaffold(
       backgroundColor: backgroundColor3,
       appBar: header(),
+      body: content(),
       bottomNavigationBar: chatInput(),
     );
   }

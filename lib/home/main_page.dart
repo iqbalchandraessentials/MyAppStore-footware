@@ -29,7 +29,7 @@ class _MainPageState extends State<MainPage> {
     Widget customBottomNav() {
       return ClipRRect(
         borderRadius: BorderRadius.vertical(
-          top: Radius.circular(20),
+          top: Radius.circular(30),
         ),
         child: BottomAppBar(
           shape: CircularNotchedRectangle(),
@@ -117,7 +117,7 @@ class _MainPageState extends State<MainPage> {
               ),
         ),
       );
-    }
+    } 
 
     Widget body() {
       switch (currentIndex) {
