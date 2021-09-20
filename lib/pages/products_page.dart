@@ -144,9 +144,14 @@ class _ProductPageState extends State<ProductPage> {
                   },
                   child: Icon(Icons.chevron_left),
                 ),
-                Icon(
-                  Icons.shopping_bag,
-                  color: backgroundColor1,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/cart');
+                  },
+                  child: Icon(
+                    Icons.shopping_bag,
+                    color: backgroundColor1,
+                  ),
                 )
               ],
             ),

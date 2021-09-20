@@ -21,85 +21,86 @@ class ChatPage extends StatelessWidget {
       );
     }
 
-    Widget emptychat() {
-      return Expanded(
-        child: Container(
-            width: double.infinity,
-            color: backgroundColor3,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset(
-                  'assets/icon_headset.png',
-                  width: 80,
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  'Opss no message yet?',
-                  style: primaryTextStyle.copyWith(
-                    fontSize: 16,
-                    fontWeight: medium,
-                  ),
-                ),
-                SizedBox(
-                  height: 12,
-                ),
-                Text(
-                  'You have never done a transaction',
-                  style: subtitleTextStyle.copyWith(
-                    fontSize: 14,
-                    fontWeight: regular,
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Container(
-                  height: 44,
-                  child: TextButton(
-                    style: TextButton.styleFrom(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 24,
-                          vertical: 10,
-                        ),
-                        backgroundColor: primaryColor,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        )),
-                    onPressed: () {},
-                    child: Text(
-                      'Explore Store',
-                      style: primaryTextStyle.copyWith(
-                        fontSize: 16,
-                        fontWeight: medium,
-                      ),
-                    ),
-                  ),
-                )
-              ],
-            )),
-      );
-    }
+    // Widget emptychat() {
+    //   return Expanded(
+    //     child: Container(
+    //         width: double.infinity,
+    //         color: backgroundColor3,
+    //         child: Column(
+    //           mainAxisAlignment: MainAxisAlignment.center,
+    //           children: [
+    //             Image.asset(
+    //               'assets/icon_headset.png',
+    //               width: 80,
+    //             ),
+    //             SizedBox(
+    //               height: 20,
+    //             ),
+    //             Text(
+    //               'Opss no message yet?',
+    //               style: primaryTextStyle.copyWith(
+    //                 fontSize: 16,
+    //                 fontWeight: medium,
+    //               ),
+    //             ),
+    //             SizedBox(
+    //               height: 12,
+    //             ),
+    //             Text(
+    //               'You have never done a transaction',
+    //               style: subtitleTextStyle.copyWith(
+    //                 fontSize: 14,
+    //                 fontWeight: regular,
+    //               ),
+    //             ),
+    //             SizedBox(
+    //               height: 20,
+    //             ),
+    //             Container(
+    //               height: 44,
+    //               child: TextButton(
+    //                 style: TextButton.styleFrom(
+    //                     padding: EdgeInsets.symmetric(
+    //                       horizontal: 24,
+    //                       vertical: 10,
+    //                     ),
+    //                     backgroundColor: primaryColor,
+    //                     shape: RoundedRectangleBorder(
+    //                       borderRadius: BorderRadius.circular(12),
+    //                     )),
+    //                 onPressed: () {
+    //                   Navigator.pushNamed(context, '/home');
+    //                 },
+    //                 child: Text(
+    //                   'Explore Store',
+    //                   style: primaryTextStyle.copyWith(
+    //                     fontSize: 16,
+    //                     fontWeight: medium,
+    //                   ),
+    //                 ),
+    //               ),
+    //             )
+    //           ],
+    //         )),
+    //   );
+    // }
 
     Widget content() {
       return Expanded(
-          child: Container(
-        width: double.infinity,
-        color: backgroundColor3,
-        child: ListView(
-          padding: EdgeInsets.symmetric(
-            horizontal: defaultMargin,
+        child: Container(
+          width: double.infinity,
+          color: backgroundColor3,
+          child: ListView(
+            padding: EdgeInsets.symmetric(
+              horizontal: defaultMargin,
+            ),
+            children: [
+              ChatTile(),
+              ChatTile(),
+              ChatTile(),
+            ],
           ),
-          children: [
-            ChatTile(),
-            ChatTile(),
-            ChatTile(),
-          ],
         ),
-      ),
-      
       );
     }
 
@@ -107,7 +108,8 @@ class ChatPage extends StatelessWidget {
       children: [
         header(),
         // emptychat(),
-        content(),      ],
+        content(),
+      ],
     );
   }
 }
