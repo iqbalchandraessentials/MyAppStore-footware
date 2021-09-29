@@ -2,10 +2,15 @@ import 'dart:ffi';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/models/product_model.dart';
 import 'package:flutter_application_1/theme.dart';
 
 class ProductPage extends StatefulWidget {
   @override
+
+  final ProductModel product;
+  ProductPage(this.product);
+
   _ProductPageState createState() => _ProductPageState();
 }
 
@@ -160,10 +165,9 @@ class _ProductPageState extends State<ProductPage> {
             height: 20,
           ),
           CarouselSlider(
-            items: images
-                .map(
-                  (image) => Image.asset(
-                    image,
+            items: widget.product.galleries!.map(
+                  (image) => Image.network(
+                    image.url!,
                     width: MediaQuery.of(context).size.width,
                     height: 310,
                     fit: BoxFit.cover,
@@ -181,7 +185,7 @@ class _ProductPageState extends State<ProductPage> {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: images.map((e) {
+            children: widget.product.galleries!.map((e) {
               index++;
               return indicator(index);
             }).toList(),
@@ -211,14 +215,14 @@ class _ProductPageState extends State<ProductPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'TERREX URBAN LOW',
+                        widget.product.name!,
                         style: primaryTextStyle.copyWith(
                           fontSize: 18,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
                       Text(
-                        'Hiking',
+                        widget.product.category!.name!,
                         style: secondaryTextStyle.copyWith(
                           fontWeight: FontWeight.normal,
                           fontSize: 12,
@@ -279,7 +283,7 @@ class _ProductPageState extends State<ProductPage> {
                     ),
                   ),
                   Text(
-                    'Rp.800.000',
+                    'Rp.${widget.product.price}',
                     style: priceTextStyle.copyWith(
                       fontWeight: FontWeight.w600,
                       fontSize: 16,
@@ -305,7 +309,7 @@ class _ProductPageState extends State<ProductPage> {
                     height: 12,
                   ),
                   Text(
-                    'Unpaved trails and mixed surfaces are easy when you have the traction and support you need. Casual enough for the daily commute.',
+                    '${widget.product.description}',
                     style: secondaryTextStyle.copyWith(
                       fontSize: 14,
                       fontWeight: FontWeight.w300,

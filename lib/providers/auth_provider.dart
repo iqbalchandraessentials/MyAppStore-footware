@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/user_model.dart';
 import 'package:flutter_application_1/services/auth_service.dart';
 
+
+
 class AuthProvider with ChangeNotifier {
 
 
@@ -22,6 +24,7 @@ Future<bool> register({
     String password : '',
   }) async {
     try {
+      // coba ambil user dari auth service . register
       UserModel user = await AuthService().register(
         name: name,
         username: username,
@@ -30,7 +33,9 @@ Future<bool> register({
       );
 
       _user = user;
+      // berhasil mendaftar
       return true;
+      // catch error
     } catch (e) {
       print(e);
       return false;

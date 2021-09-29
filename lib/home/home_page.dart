@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/home/widgets/product_card.dart';
 import 'package:flutter_application_1/home/widgets/product_newArrivals.dart';
+import 'package:flutter_application_1/models/user_model.dart';
+import 'package:flutter_application_1/providers/auth_provider.dart';
+import 'package:flutter_application_1/providers/product_provider.dart';
 import 'package:flutter_application_1/theme.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // panggil data nya
+    AuthProvider authProvider = Provider.of<AuthProvider>(context);
+    UserModel user = authProvider.user;
+
+    ProductProvider productProvider = Provider.of<ProductProvider>(context);
+
     Widget header() {
       return Container(
         margin: EdgeInsets.only(
@@ -20,14 +30,15 @@ class HomePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Hello, Name',
+                    'Hello, ${user.name}',
                     style: primaryTextStyle.copyWith(
                       fontSize: 24,
                       fontWeight: semiBold,
                     ),
+                    overflow: TextOverflow.ellipsis,
                   ),
                   Text(
-                    '@username',
+                    '@${user.username}',
                     style: subtitleTextStyle.copyWith(
                       fontSize: 16,
                       fontWeight: regular,
@@ -42,9 +53,14 @@ class HomePage extends StatelessWidget {
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   image: DecorationImage(
-                      image: AssetImage(
-                    'assets/image_profile.png',
-                  ))),
+                      image: NetworkImage(
+                    '${user.profilePhotoUrl}',
+                  )
+                      // image: DecorationImage(
+                      //     image: AssetImage(
+                      //   'assets/image_profile.png',
+                      // )
+                      )),
             )
           ],
         ),
@@ -172,7 +188,7 @@ class HomePage extends StatelessWidget {
     }
 
     // ignore: non_constant_identifier_names
-    Widget PopularProductsTitle() {
+    Widget popularProductsTitle() {
       return Container(
         margin: EdgeInsets.only(
           top: defaultMargin,
@@ -190,7 +206,7 @@ class HomePage extends StatelessWidget {
     }
 
     // ignore: non_constant_identifier_names
-    Widget PopularProducts() {
+    Widget popularProducts() {
       return Container(
         margin: EdgeInsets.only(
           top: 14,
@@ -203,11 +219,7 @@ class HomePage extends StatelessWidget {
                 width: defaultMargin,
               ),
               Row(
-                children: [
-                  ProductCard(),
-                  ProductCard(),
-                  ProductCard(),
-                ],
+                children: productProvider.products.map((product) => ProductCard(product)).toList()
               )
             ],
           ),
@@ -215,8 +227,7 @@ class HomePage extends StatelessWidget {
       );
     }
 
-
-    Widget NewArrivalsTitle() {
+    Widget newArrivalsTitle() {
       return Container(
         margin: EdgeInsets.only(
           top: defaultMargin,
@@ -233,18 +244,13 @@ class HomePage extends StatelessWidget {
       );
     }
 
-    Widget NewArrivalsProducts() {
+    Widget newArrivalsProducts() {
       return Container(
         margin: EdgeInsets.only(
           top: 14,
         ),
         child: Column(
-          children: [
-            NewArrivalsItems(),
-            NewArrivalsItems(),
-            NewArrivalsItems(),
-            NewArrivalsItems(),
-          ],
+          children: productProvider.products.map((product) => NewArrivalsItems(product)).toList(),
         ),
       );
     }
@@ -253,10 +259,10 @@ class HomePage extends StatelessWidget {
       children: [
         header(),
         category(),
-        PopularProductsTitle(),
-        PopularProducts(),
-        NewArrivalsTitle(),
-        NewArrivalsProducts(),
+        popularProductsTitle(),
+        popularProducts(),
+        newArrivalsTitle(),
+        newArrivalsProducts(),
       ],
     );
   }

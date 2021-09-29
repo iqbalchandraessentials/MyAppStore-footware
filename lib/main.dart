@@ -10,6 +10,7 @@ import 'package:flutter_application_1/pages/page_sign_up.dart';
 import 'package:flutter_application_1/pages/products_page.dart';
 import 'package:flutter_application_1/pages/splash_page.dart';
 import 'package:flutter_application_1/providers/auth_provider.dart';
+import 'package:flutter_application_1/providers/product_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() => runApp(MyApp());
@@ -17,10 +18,12 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // untuk 
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create:(context)=>AuthProvider(),
         ),
+        ChangeNotifierProvider(create:(context)=>ProductProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -31,7 +34,6 @@ class MyApp extends StatelessWidget {
           '/home' : (context) => MainPage(),
           '/detail-chat' : (context) => DetailChatPage(),
           '/edit-profile' : (context) => EditProfilePage(),
-          '/product' : (context) => ProductPage(),
           '/cart' : (context) => CartPage(),
           '/checkout' : (context) => CheckoutPage(),
           '/checkout-success' : (context) => CheckoutSuccess(),
