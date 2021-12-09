@@ -106,7 +106,6 @@ class DetailChatPage extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
             // productPreview(),
 
             Row(
@@ -145,9 +144,7 @@ class DetailChatPage extends StatelessWidget {
 
     Widget content() {
       return ListView(
-        padding: EdgeInsets.symmetric(
-          horizontal: defaultMargin
-        ),
+        padding: EdgeInsets.symmetric(horizontal: defaultMargin),
         children: [
           Buble(
             isSender: true,
